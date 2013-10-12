@@ -38,6 +38,10 @@ Products are to be added inside products.js file, and assigned to $products glob
 
 Note that tooltip is optional, everything else is mandatory.
 
+## How do I link to certain product?
+You can link to certain product using hashtag + id of the product you want to link to. For example, `http://demour.com/#bigwig_wp`.
+If no product is linked, first product in the array will be displayed.
+
 ## I would like to customize stuff, how do I get uncompressed source
 Uncompressed scripts and styles are included in the package, only they are not referenced. To use uncompressed scripts/styles, replace in your index.html this:
 
