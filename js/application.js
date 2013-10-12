@@ -1,13 +1,11 @@
-/**
-* Switcheroo by OriginalEXE
-* https://github.com/OriginalEXE/Switcheroo
-* MIT licenced
-*/
+/*!
+ * Switcheroo by OriginalEXE
+ * https://github.com/OriginalEXE/Switcheroo
+ * MIT licenced
+ */
 
 // Global "use strict", wrap it up in functions if you can't deal with it...
 "use strict";
-
-var $current_product;
 
 // Insert products to carousel
 $.each( $products, function( key, object ) {
@@ -44,6 +42,17 @@ $( '.purchase-btn' ).click( function() {
 	return false;
 
 });
+
+// Bail out if mobile, it does not behave good, damn idevices...
+if ( jQuery.browser.mobile ) {
+
+	if ( $current_product in $products ) {
+
+		top.location.replace( $products[ $current_product ].url );
+
+	}
+
+}
 
 // Purchase btn on click
 $( '.remove-btn' ).click( function() {

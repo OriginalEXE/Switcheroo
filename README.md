@@ -5,7 +5,10 @@ Switcheroo is a product demo bar designed for showcasing your products (themes, 
 Switcheroo demo can be found here: [http://switcheroo.getkodo.com/](http://switcheroo.getkodo.com/)
 
 ## Browsers supported?
-It officially supports modern browsers (mobile included) and IE >= 8
+It officially supports modern browsers and IE >= 8
+
+## Working on mobile/tablets?
+iDevices have some serious issues with using iframe this way, that's why bar is automatically closed on tablets/mobile.
 
 ## Is it responsive?
 Yes, it is.
@@ -38,30 +41,15 @@ Products are to be added inside products.js file, and assigned to $products glob
 
 Note that tooltip is optional, everything else is mandatory.
 
+## How do I specify default product?
+Default product will be used if no hash is present. Check products.js for `$current_product = 'visia';`, just replace the visia with the id of your product.
+
 ## How do I link to certain product?
 You can link to certain product using hashtag + id of the product you want to link to. For example, `http://demour.com/#bigwig_wp`.
 If no product is linked, first product in the array will be displayed.
 
 ## I would like to customize stuff, how do I get uncompressed source
-Uncompressed scripts and styles are included in the package, only they are not referenced. To use uncompressed scripts/styles, replace in your index.html this:
-
-    <link href="css/template.min.css" rel="stylesheet" media="screen">
-
-with this:
-
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="css/template.css" rel="stylesheet" media="screen">
-
-and this:
-
-    <script src="js/application.min.js"></script>
-
-with this:
-
-    <script src="js/libs/jquery.moousewheel.js"></script>
-    <script src="js/libs/bootstrap.min.js"></script>
-    <script src="js/libs/jquery.carouFredSel-6.2.1-packed.js"></script>
-    <script src="js/application.js"></script>
+Uncompressed scripts and styles are included in the package, only they are not commented. Simply comment compressed scripts/styled and uncomment uncompressed ones.
 
 ## I would like to use image instead of text for the logo, is that supported?
 Sure it is. Simply remove 'textual' class from .logo and replace words with your image (optimal height is 60px).

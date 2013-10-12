@@ -129,6 +129,17 @@ body {
 	outline: none;	
 }
 
+.product-switcher {
+	position: relative;
+}
+
+.product-switcher a:before {
+	content: '+';
+	left: 20px;
+	position: absolute;
+	top: 4px;
+}
+
 .product-switcher a {
 	color: #9B9B9B;
 	display: block;

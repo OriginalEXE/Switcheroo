@@ -1,4 +1,5 @@
-var $products;
+var $products,
+	$current_product = 'visia';
 
 // List all the products here
 
