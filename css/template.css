@@ -465,13 +465,13 @@ body {
 /* ---------->>> DARK SKIN <<<-----------*/
 /* --------------------------------------*/
 
-body,
-.switcher-bar {
+body.dark,
+.dark. switcher-bar {
 	background: #1B1B1B;
 }
 
-.switcher-bar,
-.logo,
-.header-btn a {
+.dark .switcher-bar,
+.dark .logo,
+.dark .header-btn a {
 	border-color: #000;
 }
