@@ -15,7 +15,6 @@ Switcheroo is licensed under MIT licence, which basically means you can do anyth
 
 ## How do I add products?
 Products are to be added inside products.js file, and assigned to $products global variable. Sample markup:
-```javascript
 
     $products = {
         visia : {
