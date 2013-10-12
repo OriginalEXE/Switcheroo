@@ -46,10 +46,10 @@ Default product will be used if no hash is present. Check products.js for `$curr
 
 ## How do I link to certain product?
 You can link to certain product using hashtag + id of the product you want to link to. For example, `http://demour.com/#bigwig_wp`.
-If no product is linked, first product in the array will be displayed.
+If no product is linked, default product you specified will be displayed.
 
 ## I would like to customize stuff, how do I get uncompressed source
-Uncompressed scripts and styles are included in the package, only they are not commented. Simply comment compressed scripts/styled and uncomment uncompressed ones.
+Uncompressed scripts and styles are included in the package, only they are commented. Simply comment compressed scripts/styled and uncomment uncompressed ones.
 
 ## I would like to use image instead of text for the logo, is that supported?
 Sure it is. Simply remove 'textual' class from .logo and replace words with your image (optimal height is 60px).
