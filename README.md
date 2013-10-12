@@ -1,4 +1,4 @@
 Switcheroo
 ==========
 
-jQuery based product demo bar
+A jQuery based product demo bar
