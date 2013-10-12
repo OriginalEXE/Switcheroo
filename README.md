@@ -2,7 +2,7 @@
 Switcheroo is a product demo bar designed for showcasing your products (themes, websites, plugins) in a nice and sleek way.
 
 ## Demo?
-Switcheroo demo can be found here: [http://switcher.getkodo.com/](http://switcher.getkodo.com/)
+Switcheroo demo can be found here: [http://switcheroo.getkodo.com/](http://switcheroo.getkodo.com/)
 
 ## Browsers supported?
 It officially supports modern browsers (mobile included) and IE >= 8
