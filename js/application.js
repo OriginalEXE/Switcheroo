@@ -26,10 +26,6 @@ $.each( $products, function( key, object ) {
 
 });
 
-// Hey, don't iframe my iframe!
-if ( top !== self ) 
-	top.location.replace( self.location.href );
-
 // Close bar on click
 $( '.purchase-btn' ).click( function() {
 

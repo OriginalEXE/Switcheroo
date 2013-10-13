@@ -477,7 +477,7 @@ body {
 /* --------------------------------------*/
 
 body.dark,
-.dark. switcher-bar {
+.dark .switcher-bar {
 	background: #1B1B1B;
 }
 
