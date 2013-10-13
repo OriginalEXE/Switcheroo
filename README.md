@@ -45,8 +45,11 @@ Note that tooltip is optional, everything else is mandatory.
 Default product will be used if no hash is present. Check products.js for `$current_product = 'visia';`, just replace the visia with the id of your product.
 
 ## How do I link to certain product?
-You can link to certain product using hashtag + id of the product you want to link to. For example, `http://demour.com/#bigwig_wp`.
+You can link to certain product using hashtag + id of the product you want to link to. For example, `http://demourl.com/#bigwig_wp`.
 If no product is linked, default product you specified will be displayed.
+
+Note: If you are using this on Envato marketplace, you have to use query string parameter "product" instead because marketplace encodes hash and that causes problem. So on Evato, specify product you are linking to like this: `http://demourl.com/?product=bigwig_wp`
+
 
 ## I would like to customize stuff, how do I get uncompressed source
 Uncompressed scripts and styles are included in the package, only they are commented. Simply comment compressed scripts/styled and uncomment uncompressed ones.

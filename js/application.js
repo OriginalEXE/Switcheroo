@@ -177,9 +177,15 @@ $( document ).ready( function() {
 
 	if ( ! ( $current_product in $products ) || $current_product === '' ) {
 
-		for (var key in $products ) if ( $products.hasOwnProperty( key ) ) break;
+		$current_product = location.search.replace('?product=', '');
 
-		$current_product = key;
+		if ( ! ( $current_product in $products ) || $current_product === '' ) {
+
+			for (var key in $products ) if ( $products.hasOwnProperty( key ) ) break;
+
+			$current_product = key;
+
+		}
 
 	}
 
