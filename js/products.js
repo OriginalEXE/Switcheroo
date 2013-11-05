@@ -11,7 +11,8 @@ $products = {
 		img      : 'http://i.imgur.com/hgp2v0H.jpg',
 		url      : 'http://visia.themes.pixelentity.com/',
 		purchase : 'http://themeforest.net/item/visia-responsive-one-page-retina-wordpress-theme/5602067?ref=OriginalEXE',
-		tooltip  : 'Optional Tooltip'
+		tooltip  : 'Optional Tooltip',
+		responsive: 0
 	},
 
 	bigwig_wp : {

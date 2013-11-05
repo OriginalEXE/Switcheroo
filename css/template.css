@@ -179,6 +179,22 @@ body {
 	right: -40px;
 }
 
+.mobile-btn.disabled,
+.tablet-btn.disabled,
+.desktop-btn.disabled {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+	opacity: 0;
+	visibility: hidden;
+}
+
+.mobile-btn.visible,
+.tablet-btn.visible,
+.desktop-btn.visible {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
+	opacity: 1;
+	visibility: visible;
+}
+
 
 /* ------------------------------------------*/
 /* ---------->>> PRODUCTS LIST <<<-----------*/

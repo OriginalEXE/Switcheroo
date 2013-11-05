@@ -7,6 +7,11 @@
 // Global "use strict", wrap it up in functions if you can't deal with it...
 "use strict";
 
+var $viewportButtons = $( '.mobile-btn, .tablet-btn, .desktop-btn' ),
+	$productList = $( '.products-list' ),
+	$body = $( 'body' ),
+	$productIframe = $( '.product-iframe' );
+
 // Insert products to carousel
 $.each( $products, function( key, object ) {
 
@@ -20,7 +25,7 @@ $.each( $products, function( key, object ) {
 
 	}
 
-	$( '.products-list' ).append(
+	$productList.append(
 		'<a class="product pull-left" data-id="' + key + '" ' + tooltip + '><img src="' + object.img + '" alt="' + object.name + '" width="236" height="120"><span class="title">' + object.name + '</span><span class="badge">' + object.tag + '</span></a>'
 	);
 
@@ -66,13 +71,28 @@ $( '.remove-btn' ).click( function() {
 // Let's calculate iframe height
 function switcher_iframe_height() {
 
-	if ( $( 'body' ).hasClass( 'toggle' ) ) return;
+	if ( $body.hasClass( 'toggle' ) ) return;
 
 	var $w_height = $( window ).height(),
 		$b_height = $( '.switcher-bar' ).height() + $( '.switcher-body' ).height(),
 		$i_height = $w_height - $b_height - 2;
 
-	$( '.product-iframe' ).height( $i_height );
+	$productIframe.height( $i_height );
+
+}
+
+// Check if viewport buttons should be displayed
+function switcher_viewport_buttons() {
+
+	if ( 'undefined' !== typeof $products[ $current_product ].responsive && $products[ $current_product ].responsive === 0 ) {
+
+		$viewportButtons.addClass( 'disabled' ).removeClass( 'visible' ).css({ 'opacity': 0, 'visibility': 'hidden' });
+
+	} else {
+
+		$viewportButtons.removeClass( 'disabled' ).addClass( 'visible' ).css({ 'opacity': 1, 'visibility': 'visible' });
+
+	}
 
 }
 
@@ -97,7 +117,7 @@ $( window ).load( function() {
 // Switching views
 $( '.desktop-btn' ).on( 'click', function() {
 
-	$( '.product-iframe' ).animate({
+	$productIframe.animate({
 		'width'       : $( window ).width()
 	});
 
@@ -107,7 +127,7 @@ $( '.desktop-btn' ).on( 'click', function() {
 
 $( '.tablet-btn' ).on( 'click', function() {
 
-	$( '.product-iframe' ).animate({
+	$productIframe.animate({
 		'width'       : '768px'
 	});
 
@@ -117,7 +137,7 @@ $( '.tablet-btn' ).on( 'click', function() {
 
 $( '.mobile-btn' ).on( 'click', function() {
 
-	$( '.product-iframe' ).animate({
+	$productIframe.animate({
 		'width'       : '480px'
 	});
 
@@ -126,7 +146,7 @@ $( '.mobile-btn' ).on( 'click', function() {
 });
 
 // Products carousel. Yeah, I use carousel, sue me.
-$( '.products-list' ).carouFredSel({
+$productList.carouFredSel({
 	auto       : false,
 	circular   : false,
 	infinite   : false,
@@ -143,9 +163,9 @@ $( '.products-list' ).carouFredSel({
 // On click, toggle product switcher
 $( '.product-switcher a' ).on( 'click', function() {
 
-	$( 'body' ).toggleClass( 'toggle' );
+	$body.toggleClass( 'toggle' );
 	
-	if ( ! $( 'body' ).hasClass( 'toggle' ) ) {
+	if ( ! $body.hasClass( 'toggle' ) ) {
 
 		setTimeout( 'switcher_iframe_height()', 210 );
 		setTimeout( 'switcher_iframe_height()', 310 );
@@ -160,7 +180,7 @@ $( '.product-switcher a' ).on( 'click', function() {
 });
 
 // Hide preloader on iframe load
-$( '.product-iframe' ).load( function() {
+$productIframe.load( function() {
 
 	$( '.preloader, .preloading-icon' ).fadeOut( 400 );
 
@@ -189,7 +209,9 @@ $( document ).ready( function() {
 		$products[ $current_product ].name + ' <span class="badge">' + $products[ $current_product ].tag + '</span>'
 	);
 
-	$( '.product-iframe' ).attr( 'src', $products[ $current_product ].url );
+	switcher_viewport_buttons();
+
+	$productIframe.attr( 'src', $products[ $current_product ].url );
 
 	$( '.product' ).tooltip({
 		container : 'body',
@@ -206,11 +228,11 @@ $( '.product' ).click( function() {
 
 	if ( $current_product in $products ) {
 
-		$( 'body' ).toggleClass( 'toggle' );
+		$body.toggleClass( 'toggle' );
 
 		$( '.preloader, .preloading-icon' ).fadeIn( 400 );
 
-		$( '.product-iframe' ).load( function() {
+		$productIframe.load( function() {
 
 			$( '.preloader, .preloading-icon' ).fadeOut( 400 );
 
@@ -220,11 +242,13 @@ $( '.product' ).click( function() {
 			$products[ $current_product ].name + ' <span class="badge">' + $products[ $current_product ].tag + '</span>'
 		);
 
-		$( '.product-iframe' ).attr( 'src', $products[ $current_product ].url );
+		$productIframe.attr( 'src', $products[ $current_product ].url );
 
 		location.hash = '#' + $current_product;
 
 	}
+
+	switcher_viewport_buttons();
 
 	return false;
 
