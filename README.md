@@ -41,6 +41,8 @@ Products are to be added inside products.js file, and assigned to $products glob
 
 Note that tooltip is optional, everything else is mandatory.
 
+NOTE: You can now specify if you product should not display viewport buttons, simpyl add product: 0 parameter to the product object in the list above. If not present or value is different, buttons will be showby default for each product.
+
 ## How do I specify default product?
 Default product will be used if no hash is present. Check products.js for `$current_product = 'visia';`, just replace the visia with the id of your product.
 
