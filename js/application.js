@@ -86,6 +86,8 @@ function switcher_viewport_buttons() {
 
 	if ( 'undefined' !== typeof $products[ $current_product ].responsive && $products[ $current_product ].responsive === 0 ) {
 
+		$( '.desktop-btn' ).click();
+
 		$viewportButtons.addClass( 'disabled' ).removeClass( 'visible' ).css({ 'opacity': 0, 'visibility': 'hidden' });
 
 	} else {
@@ -96,23 +98,9 @@ function switcher_viewport_buttons() {
 
 }
 
-$( document ).ready( function() {
+$( document ).ready( switcher_iframe_height );
 
-	switcher_iframe_height();
-
-});
-
-$( window ).resize( function() {
-
-	switcher_iframe_height();
-
-});
-
-$( window ).load( function() {
-
-	switcher_iframe_height();
-
-});
+$( window ).on( 'resize load', switcher_iframe_height );
 
 // Switching views
 $( '.desktop-btn' ).on( 'click', function() {

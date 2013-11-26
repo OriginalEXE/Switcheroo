@@ -19,7 +19,8 @@ $products = {
 		tag      : 'WP',
 		img      : 'http://i.imgur.com/uoreaON.jpg',
 		url      : 'http://bigwig.themes.pixelentity.com/',
-		purchase : 'http://themeforest.net/item/bigwig-modern-corporate-retina-wordpress-theme/5217458?ref=OriginalEXE'
+		purchase : 'http://themeforest.net/item/bigwig-modern-corporate-retina-wordpress-theme/5217458?ref=OriginalEXE',
+		responsive: 0
 	},
 
 	surreal : {
