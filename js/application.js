@@ -36,7 +36,7 @@ $( '.purchase-btn' ).click( function() {
 
 	if ( $current_product in $products ) {
 
-		top.location.replace( $products[ $current_product ][ 'purchase' ] );
+		top.location.href( $products[ $current_product ][ 'purchase' ] );
 
 	}
 
@@ -49,7 +49,7 @@ if ( jQuery.browser.mobile ) {
 
 	if ( $current_product in $products ) {
 
-		top.location.replace( $products[ $current_product ].url );
+		top.location.href( $products[ $current_product ].url );
 
 	}
 
@@ -60,7 +60,7 @@ $( '.remove-btn' ).click( function() {
 
 	if ( $current_product in $products ) {
 
-		top.location.replace( $products[ $current_product ].url );
+		top.location.href( $products[ $current_product ].url );
 
 	}
 
