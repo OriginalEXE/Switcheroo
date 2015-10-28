@@ -1,3 +1,5 @@
+This project is no longer maintained!
+
 ## What?
 Switcheroo is a product demo bar designed for showcasing your products (themes, websites, plugins) in a nice and sleek way.
 
